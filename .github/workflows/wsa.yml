@@ -25,7 +25,7 @@ jobs:
     - name: Run.sh 
       run: |
         cd scripts
-        ./run.sh
+        ./build.sh --arch x64 --release-type WIF --magisk-ver stable --gapps-brand MindTheGapps --root-sol magisk --compress-format 7z 
 
     - name: Package build artifacts
       run: |
