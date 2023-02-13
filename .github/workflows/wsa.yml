@@ -29,9 +29,15 @@ jobs:
 
     - name: Package build artifacts
       run: |
-        7z a test.7z *
+        7z a WSA-ALL.7z *
     - name: Upload build artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: test.7z
-        path: test.7z
+        name: WSA-ALL.7z
+        path: WSA-ALL.7z
+        
+    - name: Upload installer artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: WSAInstall
+        path: output/
