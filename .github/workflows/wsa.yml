@@ -16,10 +16,11 @@ jobs:
       with:
         ref: main
         repository: LSPosed/MagiskOnWSALocal
+
     - name: Set up environment
       run: |
-        sudo apt update
-	sudo apt install -y lzip wine winetricks patchelf e2fsprogs aria2 python3 python3-pip aria2 p7zip-full attr unzip
+        sudo apt-get update
+        sudo apt install -y lzip wine winetricks patchelf e2fsprogs aria2 python3 python3-pip aria2 p7zip-full attr unzip
 
     - name: Run.sh 
       run: |
@@ -29,7 +30,6 @@ jobs:
     - name: Package build artifacts
       run: |
         7z a test.7z *
-
     - name: Upload build artifacts
       uses: actions/upload-artifact@v1
       with:
